@@ -1,7 +1,7 @@
 %define _unpackaged_files_terminate_build 0 `
 
 Name: netpolice
-Version: 1.02
+Version: 1.2
 Release: 1%{?dist}
 Packager: CAIR <support@cair.ru>
 
