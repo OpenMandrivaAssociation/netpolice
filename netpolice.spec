@@ -3,7 +3,7 @@
 Name: netpolice
 Version: 1.2
 Release: 1%{?dist}
-Packager: CAIR <support@cair.ru>
+Packager: Anton Pischulin <apischulin@mandriva.org>
 
 Summary: netpolice meta package 
 License: BSD
