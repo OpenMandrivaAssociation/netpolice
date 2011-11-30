@@ -1,45 +1,49 @@
-%define _unpackaged_files_terminate_build 0 `
+Name:		netpolice
+Version:	2.0
+Release:	2
 
-Name: netpolice
-Version: 1.2
-Release: 1%{?dist}
-Packager: Anton Pischulin <apischulin@mandriva.org>
+Summary:	Netpolice is content filtering system
+License:	BSD
+Group:		System/Servers
+BuildRoot:	%{_tmppatch}/%{name}-%{version}-%{release}-buildroot
+Url:		http://www.netpolice.ru/
 
-Summary: netpolice meta package 
-License: BSD
-Group: System/Servers
-Url: http://www.netpolice.ru/
-
-Source0: readme
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-build
+Source0:	readme
 
 %description
-netpolice meta package.
+Netpolice is content filtering system.
 
-%package -n %name-main
-Summary: netpolice meta package
-Group: System/Servers
-Requires: squid >= 3.0
-Requires: memcached
-Requires: c-icap-netpolice-server
-Requires: c-icap-netpolice-modules
-Requires: netpolice-filter
-Requires: squid-conf-host2cat
-Requires: host2cat
-Requires: libc-icap-netpolice0
-Conflicts: c-icap-server
-Conflicts: libc-icap0
-Conflicts: c-icap-modules
+Requires:	%{name} = %{version}-%{release}
 
-%description -n %name-main
-This is the netpolice meta package.
+%package -n %{name}-main
+Summary:	netpolice meta package
+Group:		System/Servers 
+Requires:	squid >= 3.0
+Requires:	memcached
+Requires:	c-icap >= 0.1.6
+Requires:	netpolice-filter
+Requires:	squid-conf-host2cat >= 1.01
+Requires:	host2cat >= 1.01
+Requires:	netpolice-webadmin
+
+%description -n %{name}-main
+This package is meta package for %{name}.
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p %buildroot%_docdir/netpolice
-install -pD -m644 %SOURCE0 %buildroot%_docdir/netpolice
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_docdir}
+install -pD -m644 %{SOURCE0} %{buildroot}%{_docdir}/%{name}/%{name}
 
-%files -n %name-main
-%_docdir/netpolice/readme
+%clean
+rm -rf %{buildroot}
 
+%files -n %{name}-main
+%defattr(-,root,root)
+%doc %{_docdir}/%{name}/%{name}
+
+%changelog
+* Mon Aug 29 2011 L.Butorina <l.butorina@cair.ru> 2
+- New test version netpolice-2.0 for Mandriva.
+
+* Fri Jul 29 2011 L.Butorina <l.butorina@cair.ru> 1
+- New test version netpolice for Mandriva.
