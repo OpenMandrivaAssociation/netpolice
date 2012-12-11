@@ -1,11 +1,10 @@
 Name:		netpolice
 Version:	2.0
-Release:	2
+Release:	3
 
 Summary:	Netpolice is content filtering system
 License:	BSD
 Group:		System/Servers
-BuildRoot:	%{_tmppatch}/%{name}-%{version}-%{release}-buildroot
 Url:		http://www.netpolice.ru/
 
 Source0:	readme
@@ -20,7 +19,7 @@ Summary:	netpolice meta package
 Group:		System/Servers 
 Requires:	squid >= 3.0
 Requires:	memcached
-Requires:	c-icap >= 0.1.6
+Requires:	c-icap-server >= 0.1.6
 Requires:	netpolice-filter
 Requires:	squid-conf-host2cat >= 1.01
 Requires:	host2cat >= 1.01
@@ -41,9 +40,13 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc %{_docdir}/%{name}/%{name}
 
-%changelog
-* Mon Aug 29 2011 L.Butorina <l.butorina@cair.ru> 2
-- New test version netpolice-2.0 for Mandriva.
 
-* Fri Jul 29 2011 L.Butorina <l.butorina@cair.ru> 1
-- New test version netpolice for Mandriva.
+
+%changelog
+* Wed Dec 07 2011 Pischulin Anton <apischulin@mandriva.org> 2.0-2
++ Revision: 738486
+- update netpolice to 2.0
+
+  + Alex Burmashev <burmashev@mandriva.org>
+    - import netpolice
+
