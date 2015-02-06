@@ -1,6 +1,6 @@
 Name:		netpolice
 Version:	2.0
-Release:	3
+Release:	4
 
 Summary:	Netpolice is content filtering system
 License:	BSD
