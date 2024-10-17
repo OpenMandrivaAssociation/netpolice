@@ -5,7 +5,7 @@ Release:	4
 Summary:	Netpolice is content filtering system
 License:	BSD
 Group:		System/Servers
-Url:		http://www.netpolice.ru/
+Url:		https://www.netpolice.ru/
 
 Source0:	readme
 
